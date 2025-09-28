@@ -28,10 +28,23 @@
   <div class="card">
     <h2>赵老师</h2>
     <p>📱 电话：<a href="tel:18537227224">18537227224</a></p>
-    <p>💬 微信：<b>kubajiqiren0</b></p>
+    <p>💬 微信：<b id="wxid">kubajiqiren0</b>
+      <button onclick="copyWx()">复制</button>
+    </p>
     <p>✉ 邮箱：<a href="1017297517@qq.com">1017297517@qq.com</a></p>
     <p>📍 地址：安阳市文峰区紫薇壹号酷吧机器人</p>
   </div>
+  <script>
+    function copyWx() {
+      const wxid = document.getElementById("wxid").innerText;
+      navigator.clipboard.writeText(wxid).then(() => {
+        alert("微信号已复制，请打开微信添加好友。");
+      }).catch(err => {
+        alert("复制失败，请手动复制微信号。");
+      });
+    }
+  </script>
 </body>
 </html>
+
 
